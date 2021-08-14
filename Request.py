@@ -26,4 +26,5 @@ class Request:
         books = crawler.get_books(self._params)
         for i in books:
             self._bot.send_message(msg.chat.id, i)
-            time.sleep(2)
+            time.sleep(1)
+        self._bot.send_message(msg.chat.id, messages["finished_crawling"])
