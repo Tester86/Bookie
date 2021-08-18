@@ -30,7 +30,7 @@ class Request:
         self._bot.send_message(msg.chat.id, f"Done! From now on I'll only show {', '.join(self._params['filetype'])} formatted documents")
     def get_sites(self, msg):
         if msg.text == "0":
-            self._params["sites"] == []
+            self._params["sites"] = []
         else:
             self._params["sites"] = msg.text.split(", ")
         self._bot.send_message(msg.chat.id, f"Done! From now on I'll only show documents from these sources: {', '.join(self._params['sites'])}")
