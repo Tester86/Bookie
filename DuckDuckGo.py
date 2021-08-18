@@ -1,11 +1,11 @@
-from googlesearch import search
+from duckduckgo_search import ddg
 
-class Google:
+class DuckDuckGo:
     def __init__(self):
         pass
     def get_books(self, params):
         books = []
-        query = f"books {params['topic']}"
+        query = f"{params['topic']}"
         for i in params['filetype']:
             query += f" filetype:{i} OR"
         if params["sites"] != []:
@@ -13,9 +13,9 @@ class Google:
         for g in params['sites']:
             query += f" site:{g} OR"
         query = query.rsplit(" ", 1)[0]
-        #DEBUG QUERY: print(query)
-        for j in search(query, num=params['num'], stop=params['stop'], pause=params['pause']):
+        print(query)
+        for j in ddg(query, max_results=params["max_results"]):
             for jj in params['filetype']:
-                if j.endswith(jj):
-                    books.append(j)
+                if j["href"].endswith(jj):
+                    books.append(j["href"])
         return books

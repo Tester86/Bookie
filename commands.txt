@@ -1,0 +1,5 @@
+help - Shows all the commands Bookie can take
+request - Request a book and get the links to download it
+set_max_results - Specify max num of results
+set_filetypes - Specify result filetypes
+set_sites - Specify sources to get results from

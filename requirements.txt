@@ -1,3 +1,2 @@
 telebot==2.2.3
-google
-urllib
+googlepip install duckduckgo-search
